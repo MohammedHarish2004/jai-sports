@@ -11,12 +11,12 @@ import { createProductEnquiryUrl } from '../../utils/whatsapp';
 const popularKeywords = [
   'Football',
   'Cricket',
-  'Trophy',
+  'Trophies',
   'Medal',
   'Badminton',
   'Kids',
-  'Snare Drum',
   'Guitar',
+  'Violin',
   'Dumbbell',
   'Jersey',
 ];
