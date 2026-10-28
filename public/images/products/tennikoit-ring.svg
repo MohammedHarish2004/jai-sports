@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2410C"/><stop offset="100%" stop-color="#7C2D12"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" rx="36" fill="url(#bg)"/>
+  <circle cx="300" cy="270" r="230" fill="url(#glow)"/>
+
+  <!-- Subtle Dynamic Lines -->
+  <path d="M0,460 Q300,380 600,480" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="4" fill="none"/>
+  <path d="M0,500 Q300,420 600,520" stroke="#F04423" stroke-opacity="0.25" stroke-width="3" fill="none"/>
+
+  <!-- Main Product Graphic -->
+  <g filter="url(#shadow)">
+    
+      <g transform="translate(160, 140)">
+        <!-- Rubber Torus Ring -->
+        <ellipse cx="140" cy="140" rx="120" ry="120" fill="none" stroke="#F97316" stroke-width="42"/>
+        <ellipse cx="140" cy="140" rx="120" ry="120" fill="none" stroke="#EA580C" stroke-width="20"/>
+        <!-- Ring grip grooves -->
+        <line x1="140" y1="15" x2="140" y2="40" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="140" y1="240" x2="140" y2="265" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="15" y1="140" x2="40" y2="140" stroke="#FFFFFF" stroke-width="4"/>
+        <line x1="240" y1="140" x2="265" y2="140" stroke="#FFFFFF" stroke-width="4"/>
+      </g>
+    
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(36, 36)">
+    <rect width="109.5" height="30" rx="15" fill="#F04423"/>
+    <text x="12" y="20" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">TENNIKOIT</text>
+  </g>
+
+  <!-- Bottom Brand & Product Label -->
+  <g transform="translate(36, 520)">
+    <text x="0" y="20" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">Tennikoit Ring</text>
+    <text x="0" y="40" font-family="'Poppins', sans-serif" font-size="13" font-weight="600" fill="#FFA08A">JAI SPORTS • OFFICIAL GEAR</text>
+  </g>
+</svg>

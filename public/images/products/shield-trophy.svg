@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3F2212"/><stop offset="100%" stop-color="#1A0D06"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD34D"/>
+      <stop offset="50%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B4A"/>
+      <stop offset="100%" stop-color="#F04423"/>
+    </linearGradient>
+    <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" rx="24" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Sport Pattern Grid -->
+  <circle cx="300" cy="270" r="228" fill="url(#glowGrad)"/>
+  <path d="M0,450 Q300,360 600,510" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="4" fill="none"/>
+  <path d="M0,491.99999999999994 Q300,402 600,552" stroke="#F04423" stroke-opacity="0.2" stroke-width="3" fill="none"/>
+
+  <!-- Main Graphic -->
+  <g filter="url(#cardShadow)">
+    
+      <!-- Shield Shape -->
+      <path d="M220,160 L380,160 C380,300 300,370 300,380 C300,370 220,300 220,160 Z" fill="#78350F" stroke="#F59E0B" stroke-width="8"/>
+      <!-- Center Brass Plate -->
+      <circle cx="300" cy="250" r="50" fill="url(#goldGrad)" stroke="#B45309" stroke-width="4"/>
+      <!-- Annual Winner Scrolls -->
+      <rect x="250" y="320" width="100" height="16" rx="4" fill="url(#goldGrad)"/>
+      <rect x="260" y="342" width="80" height="14" rx="4" fill="url(#goldGrad)"/>
+    
+  </g>
+
+  
+  <!-- Sport Badge -->
+  <g transform="translate(32, 32)">
+    <rect width="147.5" height="28" rx="14" fill="#F04423" fill-opacity="0.95"/>
+    <text x="12" y="19" font-family="'Poppins', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" letter-spacing="0.5">WOODEN SHIELD</text>
+  </g>
+  
+</svg>

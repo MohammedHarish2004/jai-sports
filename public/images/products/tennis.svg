@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14532D"/><stop offset="100%" stop-color="#052E16"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="50%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="600" rx="36" fill="url(#bg)"/>
+  <circle cx="300" cy="270" r="230" fill="url(#glow)"/>
+
+  <!-- Subtle Dynamic Lines -->
+  <path d="M0,460 Q300,380 600,480" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="4" fill="none"/>
+  <path d="M0,500 Q300,420 600,520" stroke="#F04423" stroke-opacity="0.25" stroke-width="3" fill="none"/>
+
+  <!-- Main Product Graphic -->
+  <g filter="url(#shadow)">
+    
+      <g transform="translate(150, 140)">
+        <!-- Tennis Racket -->
+        <ellipse cx="140" cy="110" rx="75" ry="95" fill="none" stroke="#F59E0B" stroke-width="12"/>
+        <!-- String Grid -->
+        <line x1="100" y1="30" x2="100" y2="190" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <line x1="140" y1="20" x2="140" y2="200" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <line x1="180" y1="30" x2="180" y2="190" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <line x1="80" y1="80" x2="200" y2="80" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <line x1="70" y1="120" x2="210" y2="120" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <line x1="80" y1="160" x2="200" y2="160" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.8"/>
+        <rect x="130" y="200" width="20" height="90" rx="8" fill="#F04423"/>
+        <!-- Optic Yellow Tennis Ball -->
+        <circle cx="230" cy="210" r="38" fill="#CCFF00" stroke="#65A30D" stroke-width="4"/>
+        <path d="M205,210 C215,190 245,190 255,210" stroke="#FFFFFF" stroke-width="4" fill="none"/>
+      </g>
+    
+  </g>
+
+  <!-- Top Badge -->
+  <g transform="translate(36, 36)">
+    <rect width="81" height="30" rx="15" fill="#F04423"/>
+    <text x="12" y="20" font-family="'Outfit', sans-serif" font-size="12" font-weight="800" fill="#FFFFFF" letter-spacing="0.5">TENNIS</text>
+  </g>
+
+  <!-- Bottom Brand & Product Label -->
+  <g transform="translate(36, 520)">
+    <text x="0" y="20" font-family="'Outfit', sans-serif" font-size="24" font-weight="900" fill="#FFFFFF">Tennis</text>
+    <text x="0" y="40" font-family="'Poppins', sans-serif" font-size="13" font-weight="600" fill="#FFA08A">JAI SPORTS • OFFICIAL GEAR</text>
+  </g>
+</svg>

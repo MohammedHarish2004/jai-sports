@@ -1,0 +1,30 @@
+export const siteConfig = {
+  brandName: "Jai Sports",
+  tagline: "Passion Starts Here.",
+  shortDescription: "Your trusted destination for premium sports equipment, championship trophies, medals, kids sports gear, and custom athletic wear.",
+  whatsappNumber: "918438691187", // International format, digits only without +, spaces or dashes
+  displayPhone: "0431 27711801",
+  displayPhone2: "0431 4200135",
+  email: "jaisportstrichy@gmail.com",
+  address: {
+    street: "7A/1 Madurai Road",
+    area: "Opp.Holy Cross College",
+    city: "Tiruchirappalli",
+    pincode: "620002",
+    country: "Tamilnadu, India",
+  },
+  businessHours: {
+    weekdays: "Monday – Sunday: 9:30 AM – 8:30 PM",
+    
+  },
+  socialLinks: {
+    facebook: "https://facebook.com/jaisportsofficial",
+    instagram: "https://instagram.com/jaisportsofficial",
+    youtube: "https://youtube.com/@jaisportsofficial",
+    twitter: "https://twitter.com/jaisports",
+  },
+  currency: {
+    code: "INR",
+    symbol: "₹",
+  },
+};
