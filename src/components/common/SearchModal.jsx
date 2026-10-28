@@ -55,10 +55,10 @@ export default function SearchModal({ isOpen, onClose }) {
   const trimmed = query.trim().toLowerCase();
   const searchResults = trimmed
     ? products.filter((p) => {
-        if (p.categoryId !== 'sports') return false;
+        const cat = categories.find((c) => c.id === p.categoryId);
+        if (cat?.comingSoon) return false;
         const nameMatch = p.name.toLowerCase().includes(trimmed);
         const descMatch = p.description.toLowerCase().includes(trimmed);
-        const cat = categories.find((c) => c.id === p.categoryId);
         const catMatch = cat ? cat.name.toLowerCase().includes(trimmed) : false;
         return nameMatch || descMatch || catMatch;
       })

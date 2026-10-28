@@ -5,8 +5,11 @@ export default function CategoryFilter({
   selectedCategory = 'all',
   onSelectCategory,
 }) {
-  // Compute active sports product count
-  const activeCount = products.filter((p) => p.categoryId === 'sports').length;
+  // Compute active products count across active categories
+  const activeCount = products.filter((p) => {
+    const cat = categories.find((c) => c.id === p.categoryId);
+    return cat && !cat.comingSoon;
+  }).length;
 
   const getCategoryCount = (categoryId) => {
     return products.filter((p) => p.categoryId === categoryId).length;

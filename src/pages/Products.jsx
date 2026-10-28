@@ -5,7 +5,7 @@ import CategoryFilter from '../components/products/CategoryFilter';
 import ProductSearch from '../components/products/ProductSearch';
 import ProductGrid from '../components/products/ProductGrid';
 import CategoryComingSoon from '../components/products/CategoryComingSoon';
-import { products } from '../data/shopData';
+import { categories, products } from '../data/shopData';
 import { findCategory, filterProducts, isCategoryComingSoon } from '../utils/productFilters';
 import { siteConfig } from '../config/siteConfig';
 
@@ -33,9 +33,12 @@ export default function Products() {
     return isCategoryComingSoon(currentCategory);
   }, [currentCategory]);
 
-  // Active available products count (sports gear)
+  // Active available products count
   const activeTotalCount = useMemo(() => {
-    return products.filter((p) => p.categoryId === 'sports').length;
+    return products.filter((p) => {
+      const cat = categories.find((c) => c.id === p.categoryId);
+      return cat && !cat.comingSoon;
+    }).length;
   }, []);
 
   // Filter products based on category and search query

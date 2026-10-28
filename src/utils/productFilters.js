@@ -12,7 +12,7 @@ export function findCategory(categoryKey) {
 }
 
 /**
- * Checks if a category is marked as Coming Soon (or not sports for now)
+ * Checks if a category is marked as Coming Soon
  * @param {Object|string} categoryOrSlug
  * @returns {boolean}
  */
@@ -20,7 +20,7 @@ export function isCategoryComingSoon(categoryOrSlug) {
   if (!categoryOrSlug) return false;
   const cat = typeof categoryOrSlug === 'string' ? findCategory(categoryOrSlug) : categoryOrSlug;
   if (!cat) return false;
-  return Boolean(cat.comingSoon || cat.id !== 'sports');
+  return Boolean(cat.comingSoon);
 }
 
 /**
@@ -28,7 +28,7 @@ export function isCategoryComingSoon(categoryOrSlug) {
  * @returns {Array}
  */
 export function getActiveCategories() {
-  return categories.filter(c => !c.comingSoon && c.id === 'sports');
+  return categories.filter(c => !c.comingSoon);
 }
 
 /**
@@ -56,10 +56,10 @@ export function filterProducts({ categorySlug = '', searchQuery = '' } = {}) {
       return [];
     }
   } else {
-    // When viewing 'all', show active products from sports category
+    // When viewing 'all', show active products from active categories
     filtered = filtered.filter(p => {
       const cat = categories.find(c => c.id === p.categoryId);
-      return cat && !cat.comingSoon && cat.id === 'sports';
+      return cat && !cat.comingSoon;
     });
   }
 
