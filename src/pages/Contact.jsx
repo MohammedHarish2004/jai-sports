@@ -230,14 +230,7 @@ export default function Contact() {
                   >
                     <YoutubeIcon className="w-4 h-4" />
                   </a>
-                  <a
-                    href={siteConfig.socialLinks.twitter}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-9 h-9 rounded-xl bg-slate-100 hover:bg-[#F04423] hover:text-white flex items-center justify-center text-slate-600 transition-colors"
-                  >
-                    <TwitterIcon className="w-4 h-4" />
-                  </a>
+                  
                 </div>
               </div>
             </div>

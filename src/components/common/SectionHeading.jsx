@@ -10,24 +10,28 @@ export default function SectionHeading({
   return (
     <div
       className={`mb-10 md:mb-14 ${
-        centered ? 'text-center mx-auto max-w-3xl' : 'max-w-3xl'
+        centered ? 'text-center mx-auto max-w-3xl' : 'w-full'
       } ${className}`}
     >
-      {badge && (
-        <div
-          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 ${
-            dark
-              ? 'bg-[#F04423]/20 text-[#FFA08A] border border-[#F04423]/40'
-              : 'bg-[#FFF0ED] text-[#F04423] border border-[#F04423]/20'
-          }`}
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#F04423] animate-pulse" />
-          {badge}
-        </div>
-      )}
+      <div
+        className={`flex flex-col md:flex-row md:items-end md:justify-between gap-4 sm:gap-6 ${
+          centered ? 'md:flex-col md:items-center text-center' : ''
+        }`}
+      >
+        <div className={centered ? 'max-w-3xl mx-auto' : 'max-w-2xl'}>
+          {badge && (
+            <div
+              className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 ${
+                dark
+                  ? 'bg-[#F04423]/20 text-[#FFA08A] border border-[#F04423]/40'
+                  : 'bg-[#FFF0ED] text-[#F04423] border border-[#F04423]/20'
+              }`}
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-[#F04423] animate-pulse" />
+              {badge}
+            </div>
+          )}
 
-      <div className={`flex flex-col md:flex-row md:items-end justify-between gap-4 ${centered ? 'md:flex-col md:items-center' : ''}`}>
-        <div>
           <h2
             className={`text-3xl sm:text-4xl lg:text-5xl font-black font-outfit tracking-tight leading-tight ${
               dark ? 'text-white' : 'text-[#101B4B]'
@@ -48,7 +52,7 @@ export default function SectionHeading({
         </div>
 
         {action && (
-          <div className="shrink-0 mt-2 md:mt-0">
+          <div className="shrink-0 mt-2 md:mt-0 md:self-end">
             {action}
           </div>
         )}

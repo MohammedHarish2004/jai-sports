@@ -82,13 +82,16 @@ export default function HeroSection() {
         }}
         className="w-full h-full"
       >
-        {heroBanners.map((banner) => (
+        {heroBanners.map((banner, index) => (
           <SwiperSlide key={banner.id} className="relative w-full overflow-hidden">
             <div className="relative w-full h-[500px] sm:h-[560px] md:h-[620px] lg:h-[680px] flex items-end sm:items-center">
-              {/* Background Image: Vivid, sharp, and clearly visible on mobile and desktop */}
+              {/* Background Image: First banner eager-loads for LCP; rest are lazy-loaded */}
               <img
                 src={banner.image}
                 alt={banner.title}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover object-center sm:object-center"
               />
 

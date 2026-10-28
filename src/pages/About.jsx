@@ -145,6 +145,8 @@ export default function About() {
                 <img
                   src={legacyImg}
                   alt="51 Years (1975-2027) Legacy - Inspiring Student Success"
+                  loading="lazy"
+                  decoding="async"
                   className="w-80 sm:w-100 rounded-3xl h-auto mx-auto object-contain drop-shadow-md"
                 />
               </div>

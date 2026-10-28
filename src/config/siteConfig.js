@@ -18,10 +18,9 @@ export const siteConfig = {
     
   },
   socialLinks: {
-    facebook: "https://facebook.com/jaisportsofficial",
-    instagram: "https://instagram.com/jaisportsofficial",
-    youtube: "https://youtube.com/@jaisportsofficial",
-    twitter: "https://twitter.com/jaisports",
+    facebook: "https://www.facebook.com/jaisports/",
+    instagram: "https://www.instagram.com/_jai_sports_",
+    youtube: "https://youtube.com/@jaisports50yearsofgoldenera?si=AbP5PLjtKxwD9Ocy",
   },
   currency: {
     code: "INR",

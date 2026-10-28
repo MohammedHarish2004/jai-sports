@@ -5,20 +5,29 @@ import ProductCard from '../products/ProductCard';
 import { categories, products } from '../../data/shopData';
 
 export default function FeaturedProducts() {
-  // Read active products where featured is true
-  const activeProducts = products.filter((p) => {
+  const activeCategories = categories.filter((c) => !c.comingSoon);
+
+  // Exactly 2 products per category (6 categories x 2 = 12 products total)
+  const featuredList = activeCategories.flatMap((cat) => {
+    const catProducts = products.filter((p) => p.categoryId === cat.id);
+    const marked = catProducts.filter((p) => p.featured);
+    if (marked.length >= 2) return marked.slice(0, 2);
+    const remaining = catProducts.filter((p) => !p.featured);
+    return [...marked, ...remaining].slice(0, 2);
+  });
+
+  const totalActiveProducts = products.filter((p) => {
     const cat = categories.find((c) => c.id === p.categoryId);
     return cat && !cat.comingSoon;
-  });
-  const featuredList = activeProducts.filter((p) => p.featured === true);
+  }).length;
 
   return (
     <section className="py-16 sm:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           badge="TOP PICKS"
-          title="Featured Products & Awards"
-          subtitle="Explore our handpicked selection of top-performing equipment, championship trophies, and athletic favorites."
+          title="Featured Products"
+          subtitle="Explore handpicked favorites across all our specialized departments — sports, trophies, music, fitness, uniforms, and learning essentials."
           action={
             <Link
               to="/products"
@@ -31,7 +40,7 @@ export default function FeaturedProducts() {
           }
         />
 
-        {/* Featured Products Grid */}
+        {/* Featured Products Grid: Exactly 12 Items (2 per Category) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
           {featuredList.map((product, index) => (
             <ProductCard key={product.id} product={product} index={index} />
@@ -44,7 +53,7 @@ export default function FeaturedProducts() {
             to="/products"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-2xl bg-[#101B4B] text-white hover:bg-[#18286E] font-bold text-sm shadow-md hover:shadow-xl hover:-translate-y-0.5 transition-all"
           >
-            <span>Browse Complete Product Catalogue ({activeProducts.length} Items)</span>
+            <span>Browse Complete Product Catalogue ({totalActiveProducts} Items)</span>
             <ArrowRight className="w-4 h-4 text-[#F04423]" />
           </Link>
         </div>

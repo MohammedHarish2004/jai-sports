@@ -97,6 +97,7 @@ export default function Header() {
               <img
                 src={jaiLogo}
                 alt={siteConfig.brandName}
+                decoding="async"
                 className="h-10 sm:h-12 w-auto max-h-12 object-contain group-hover:scale-105 transition-transform duration-300"
               />
             </Link>

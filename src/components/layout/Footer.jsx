@@ -32,6 +32,8 @@ export default function Footer() {
               <img
                 src={jaiLogo}
                 alt={siteConfig.brandName}
+                loading="lazy"
+                decoding="async"
                 className="h-10 sm:h-12 w-auto max-w-[210px] sm:max-w-[240px] object-contain group-hover:scale-102 transition-transform duration-300"
               />
             </Link>
@@ -69,15 +71,7 @@ export default function Footer() {
               >
                 <YoutubeIcon className="w-4 h-4" />
               </a>
-              <a
-                href={siteConfig.socialLinks.twitter}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Twitter"
-                className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#F04423] flex items-center justify-center text-white transition-all duration-200"
-              >
-                <TwitterIcon className="w-4 h-4" />
-              </a>
+              
             </div>
           </div>
 

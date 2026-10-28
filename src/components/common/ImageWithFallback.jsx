@@ -7,6 +7,8 @@ export default function ImageWithFallback({
   className = '',
   aspectRatio = 'aspect-square',
   fallbackText = 'Jai Sports',
+  loading = 'lazy',
+  decoding = 'async',
   ...props
 }) {
   const [error, setError] = useState(false);
@@ -34,7 +36,8 @@ export default function ImageWithFallback({
     <img
       src={src}
       alt={alt}
-      loading="lazy"
+      loading={loading}
+      decoding={decoding}
       onError={() => setError(true)}
       className={`${aspectRatio} ${className} w-full object-cover transition-transform duration-300`}
       {...props}

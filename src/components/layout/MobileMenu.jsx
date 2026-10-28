@@ -35,6 +35,8 @@ export default function MobileMenu({ isOpen, onClose, onOpenSearch }) {
                 <img
                   src={jaiLogo}
                   alt={siteConfig.brandName}
+                  loading="lazy"
+                  decoding="async"
                   className="h-8 w-auto max-w-[150px] object-contain"
                 />
               </div>

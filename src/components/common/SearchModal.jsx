@@ -179,6 +179,8 @@ export default function SearchModal({ isOpen, onClose }) {
                               <img
                                 src={product.image}
                                 alt={product.name}
+                                loading="lazy"
+                                decoding="async"
                                 className="w-12 h-12 rounded-xl object-cover bg-slate-100 shrink-0 border border-slate-200/80"
                                 onError={(e) => {
                                   e.target.style.display = 'none';

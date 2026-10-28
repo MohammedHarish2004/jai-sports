@@ -144,6 +144,8 @@ export default function CustomerFeedback() {
                       <img
                         src={item.imageUrl}
                         alt={item.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-sm shrink-0"
                         onError={(e) => {
                           e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(

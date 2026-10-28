@@ -39,6 +39,8 @@ export default function LegacyBadge({
           <img
             src={legacyImg}
             alt="51 Years (1975-2027) Legacy - Inspiring Student Success"
+            loading="lazy"
+            decoding="async"
             className="w-full h-auto object-contain mx-auto"
           />
         </div>
@@ -74,6 +76,8 @@ export default function LegacyBadge({
       <img
         src={legacyImg}
         alt="51 Years (1975-2027) Legacy - Inspiring Student Success"
+        loading="lazy"
+        decoding="async"
         className="w-28 sm:w-36 h-auto object-contain mx-auto"
       />
     </div>
