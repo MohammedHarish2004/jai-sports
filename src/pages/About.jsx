@@ -13,7 +13,7 @@ import {
   Target,
   Trophy,
 } from 'lucide-react';
-import { siteConfig } from '../config/siteConfig';
+import Seo from '../components/common/Seo';
 import legacyImg from '../assets/51years.png';
 
 const floors = [
@@ -51,12 +51,16 @@ const floors = [
 
 export default function About() {
   useEffect(() => {
-    document.title = `About Us — ${siteConfig.brandName}`;
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <main className="bg-[#F5F6F8]">
+      <Seo
+        title="About Jai Sports | Trichy's Sports Shop Since 1975"
+        description="Learn about Jai Sports, a family-run sports shop in Trichy serving athletes, schools and sports lovers since 1975."
+        keywords={['Jai Sports history', 'sports shop in Trichy']}
+      />
       <section className="relative overflow-hidden bg-gradient-to-br from-[#101B4B] via-[#142159] to-[#0A1132] py-16 text-white sm:py-24">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F04423_1px,transparent_1px)] [background-size:24px_24px]" />
         <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

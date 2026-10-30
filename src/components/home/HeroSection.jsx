@@ -112,9 +112,15 @@ export default function HeroSection() {
                   </div>
 
                   {/* Banner Headline */}
-                  <h1 className="text-2xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-outfit text-white tracking-tight leading-[1.12] drop-shadow-md">
+                  {index === 0 ? (
+                    <h1 className="text-2xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-outfit text-white tracking-tight leading-[1.12] drop-shadow-md">
+                      Best Sports Shop in Trichy
+                    </h1>
+                  ) : (
+                    <h2 className="text-2xl sm:text-5xl lg:text-6xl xl:text-7xl font-black font-outfit text-white tracking-tight leading-[1.12] drop-shadow-md">
                     {banner.title}
-                  </h1>
+                    </h2>
+                  )}
 
                   {/* Banner Subtitle */}
                   <p className="text-xs sm:text-base md:text-lg lg:text-xl text-slate-100 sm:text-slate-200 leading-relaxed font-normal max-w-xl drop-shadow line-clamp-2 sm:line-clamp-none">

@@ -17,7 +17,7 @@ export default function CategorySection() {
         <SectionHeading
           badge="CATEGORIES"
           title="Shop by Category"
-          subtitle="Discover specialized equipment, victory trophies, and training gear built for performance and durability."
+          subtitle="Jai Sports is a local sports goods shop in Trichy for cricket bats, footballs, badminton gear, trophies, fitness equipment, uniforms, and more."
           action={
             <Link
               to="/products"

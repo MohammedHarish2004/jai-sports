@@ -12,7 +12,7 @@ import {
 import SectionHeading from '../components/common/SectionHeading';
 import WhatsAppButton from '../components/common/WhatsAppButton';
 import { services } from '../data/services';
-import { siteConfig } from '../config/siteConfig';
+import Seo from '../components/common/Seo';
 
 const iconMap = {
   Trophy,
@@ -25,12 +25,16 @@ const iconMap = {
 
 export default function Services() {
   useEffect(() => {
-    document.title = `Services — ${siteConfig.brandName} | Trophies, Customization & Bulk Supply`;
     window.scrollTo(0, 0);
   }, []);
 
   return (
     <div className="bg-[#F5F6F8] py-12 sm:py-16">
+      <Seo
+        title="Sports Shop Services in Trichy | Jai Sports"
+        description="Explore trophy customization, team uniforms and bulk sports equipment supply from Jai Sports in Trichy."
+        keywords={['trophy customization Trichy', 'bulk sports equipment Trichy']}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
         {/* Services Page Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">

@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import HeroSection from '../components/home/HeroSection';
 import CategorySection from '../components/home/CategorySection';
 import FeaturedProducts from '../components/home/FeaturedProducts';
@@ -6,15 +5,22 @@ import WhyChooseUs from '../components/home/WhyChooseUs';
 import ServicesPreview from '../components/home/ServicesPreview';
 import CustomerFeedback from '../components/home/CustomerFeedback';
 import CTASection from '../components/home/CTASection';
-import { siteConfig } from '../config/siteConfig';
+import Seo from '../components/common/Seo';
 
 export default function Home() {
-  useEffect(() => {
-    document.title = `${siteConfig.brandName} — ${siteConfig.tagline} | Sports Equipment, Trophies & Awards`;
-  }, []);
-
   return (
     <div>
+      <Seo
+        title="Best Sports Shop in Trichy | Jai Sports"
+        description="Shop cricket bats, footballs, badminton gear, trophies, medals, fitness equipment and team uniforms at Jai Sports, a local sports goods store on Madurai Road, Trichy."
+        keywords={[
+          'cricket shop in Trichy',
+          'football shop Trichy',
+          'badminton shop Trichy',
+          'sports goods store Tiruchirappalli',
+          'sports equipment for schools Trichy',
+        ]}
+      />
       <HeroSection />
       <CategorySection />
       <FeaturedProducts />

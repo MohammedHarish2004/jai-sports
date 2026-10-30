@@ -1,15 +1,12 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, ArrowLeft, Home, Search } from 'lucide-react';
 import { siteConfig } from '../config/siteConfig';
+import Seo from '../components/common/Seo';
 
 export default function NotFound() {
-  useEffect(() => {
-    document.title = `404 — Page Not Found | ${siteConfig.brandName}`;
-  }, []);
-
   return (
     <div className="min-h-[75vh] bg-[#F5F6F8] flex items-center justify-center py-16 px-4">
+      <Seo title={`404 — Page Not Found | ${siteConfig.brandName}`} noindex />
       <div className="max-w-md w-full bg-white rounded-3xl p-8 sm:p-12 text-center border border-slate-200/80 shadow-xl space-y-6">
         <div className="w-20 h-20 rounded-3xl bg-[#FFF0ED] text-[#F04423] mx-auto flex items-center justify-center border border-[#F04423]/20 shadow-sm">
           <Trophy className="w-10 h-10 rotate-12" />

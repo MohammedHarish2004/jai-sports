@@ -7,7 +7,60 @@ import ProductGrid from '../components/products/ProductGrid';
 import CategoryComingSoon from '../components/products/CategoryComingSoon';
 import { categories, products } from '../data/shopData';
 import { findCategory, filterProducts, isCategoryComingSoon } from '../utils/productFilters';
-import { siteConfig } from '../config/siteConfig';
+import Seo from '../components/common/Seo';
+
+const categorySeo = {
+  sports: {
+    title: 'Sports Equipment in Trichy | Jai Sports',
+    description: 'Shop cricket bats, footballs, badminton rackets, basketballs and other sports goods in Trichy at Jai Sports.',
+    keywords: [
+      'sports equipment shop Trichy',
+      'sports goods store Tiruchirappalli',
+      'cricket shop Trichy',
+      'cricket bats Trichy',
+      'football shop Trichy',
+      'badminton rackets Trichy',
+      'school sports equipment Trichy',
+    ],
+    heading: 'Sports Equipment in Trichy',
+  },
+  trophies: {
+    title: 'Trophies & Medals Shop in Trichy | Jai Sports',
+    description: 'Shop championship trophies, sports cups, medals, shields and custom awards for tournaments and school events at Jai Sports, Trichy.',
+    keywords: [
+      'trophy shop in Trichy',
+      'sports trophies Trichy',
+      'medal shop Trichy',
+      'custom trophies Trichy',
+      'school sports day trophies',
+    ],
+    heading: 'Trophies & Medals Shop in Trichy',
+  },
+  kids: {
+    title: 'Kids Sports & Activity Gear in Trichy | Jai Sports',
+    description: 'Explore kids sports gear, wooden puzzles, Montessori learning materials and educational activity products at Jai Sports in Trichy.',
+    keywords: ['kids sports shop Trichy', 'Montessori materials Trichy', 'educational toys Trichy', 'wooden puzzles Trichy'],
+    heading: 'Kids Sports & Activity Gear',
+  },
+  fitness: {
+    title: 'Fitness Equipment Shop in Trichy | Jai Sports',
+    description: 'Browse dumbbells, home gym equipment, strength-training gear and fitness accessories at Jai Sports, Trichy.',
+    keywords: ['fitness equipment Trichy', 'gym equipment shop Trichy', 'dumbbells Trichy', 'home gym equipment Trichy'],
+    heading: 'Fitness Equipment in Trichy',
+  },
+  uniforms: {
+    title: 'Sports & School Uniforms in Trichy | Jai Sports',
+    description: 'Shop custom team wear, sports uniforms, school cadet uniforms, NCC, Scouts and Guides uniform items at Jai Sports in Trichy.',
+    keywords: ['sports uniforms Trichy', 'team jerseys Trichy', 'NCC uniform shop Trichy', 'Scouts uniform Trichy', 'school uniform shop Trichy'],
+    heading: 'Sports & School Uniforms in Trichy',
+  },
+  'musical-instruments': {
+    title: 'Musical Instruments in Trichy | Jai Sports',
+    description: 'Discover school band instruments, drums, guitars, keyboards and percussion at Jai Sports, a musical instruments shop in Trichy.',
+    keywords: ['musical instruments shop Trichy', 'guitar shop Trichy', 'drum shop Trichy', 'school band instruments Trichy'],
+    heading: 'Musical Instruments in Trichy',
+  },
+};
 
 export default function Products() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -50,11 +103,11 @@ export default function Products() {
     });
   }, [categoryParam, searchQuery, isInvalidCategory, isComingSoon]);
 
-  // Set document title
-  useEffect(() => {
-    const categoryTitle = currentCategory ? `${currentCategory.name} — ` : '';
-    document.title = `${categoryTitle}Products | ${siteConfig.brandName} Catalogue`;
-  }, [currentCategory]);
+  const seo = categorySeo[currentCategory?.slug] || {
+    title: 'Sports Equipment & Trophies Catalogue | Jai Sports Trichy',
+    description: 'Browse sports equipment, trophies, medals, fitness gear and more from Jai Sports, a trusted sports shop in Trichy.',
+    keywords: ['sports shop Trichy', 'trophies shop Trichy'],
+  };
 
   // Handler for category selection
   const handleSelectCategory = (slug) => {
@@ -98,6 +151,12 @@ export default function Products() {
 
   return (
     <div className="py-8 sm:py-12 bg-[#F5F6F8] min-h-[80vh]">
+      <Seo
+        title={seo.title}
+        description={seo.description}
+        keywords={seo.keywords}
+        noindex={isInvalidCategory}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         {/* Breadcrumb Navigation */}
         <Breadcrumbs items={breadcrumbItems} />
@@ -119,7 +178,7 @@ export default function Products() {
               </span>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-outfit text-[#101B4B] tracking-tight">
-                {currentCategory ? currentCategory.name : 'Explore Our Products'}
+                {currentCategory ? (seo.heading || currentCategory.name) : 'Explore Our Products'}
               </h1>
 
               <p className="mt-2.5 text-sm sm:text-base text-[#555555] leading-relaxed">

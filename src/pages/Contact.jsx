@@ -18,6 +18,7 @@ import {
 import { siteConfig } from '../config/siteConfig';
 import { createContactFormEnquiryUrl, openWhatsApp } from '../utils/whatsapp';
 import WhatsAppButton from '../components/common/WhatsAppButton';
+import Seo from '../components/common/Seo';
 
 const enquiryTypes = [
   'General Enquiry',
@@ -30,7 +31,6 @@ const enquiryTypes = [
 
 export default function Contact() {
   useEffect(() => {
-    document.title = `Contact Us — ${siteConfig.brandName} | WhatsApp & Store Enquiry`;
     window.scrollTo(0, 0);
   }, []);
 
@@ -87,6 +87,11 @@ export default function Contact() {
 
   return (
     <div className="bg-[#F5F6F8] py-12 sm:py-16">
+      <Seo
+        title="Contact Jai Sports Trichy | Sports & Trophies Shop"
+        description="Contact Jai Sports in Trichy for sports equipment, trophies, uniforms and store enquiries. Visit us on Madurai Road or call our shop."
+        keywords={['Jai Sports contact', 'sports shop Madurai Road Trichy', 'trophy shop contact Trichy']}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Page Heading */}
         <div className="text-center max-w-3xl mx-auto space-y-3">
@@ -94,7 +99,7 @@ export default function Contact() {
             CONNECT WITH JAI SPORTS
           </span>
           <h1 className="text-3xl sm:text-5xl font-black font-outfit text-[#101B4B] tracking-tight">
-            Get in Touch
+            Contact Jai Sports Trichy
           </h1>
           <p className="text-base sm:text-lg text-[#555555] leading-relaxed">
             Have a question about product availability, trophy engraving, or custom uniforms? Contact us directly or send a message via WhatsApp.

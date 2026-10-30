@@ -3,7 +3,7 @@ export const categories = [
     id: "sports",
     name: "Sports",
     slug: "sports",
-    description: "High-grade sports equipment for football, cricket, basketball, badminton, tennis and volleyball.",
+    description: "Shop cricket bats, footballs, basketballs, badminton rackets, tennis and volleyball equipment for players, schools and sports clubs.",
     image: "/images/categories/sports.jpg",
     comingSoon: false
   },
@@ -11,7 +11,7 @@ export const categories = [
     id: "trophies",
     name: "Trophies",
     slug: "trophies",
-    description: "Championship cups, crystal awards, custom sports medals, wooden plaques and celebration shields.",
+    description: "Shop championship trophies, sports cups, crystal awards, custom medals, wooden plaques and shields for tournaments and school events.",
     image: "/images/categories/trophies.jpg",
     comingSoon: false
   },
@@ -19,7 +19,7 @@ export const categories = [
     id: "kids",
     name: "Kids",
     slug: "kids",
-    description: "Educational wooden puzzles, Montessori sensorial equipments, building blocks, and brain-development activity sets.",
+    description: "Explore educational wooden puzzles, Montessori learning materials, building blocks and activity sets for children and schools.",
     image: "/images/categories/kids.jpg",
     comingSoon: false
   },
@@ -27,7 +27,7 @@ export const categories = [
     id: "fitness",
     name: "Fitness",
     slug: "fitness",
-    description: "Endurance gear, dumbbells, resistance bands, yoga mats, and agility training equipment.",
+    description: "Browse dumbbells, gym and home fitness equipment, resistance bands, yoga mats and agility training gear.",
     image: "/images/categories/fitness.jpg",
     comingSoon: false
   },
@@ -35,7 +35,7 @@ export const categories = [
     id: "uniforms",
     name: "Uniforms",
     slug: "uniforms",
-    description: "Official NCC, Scouts, Guides, school cadet uniforms, badges, materials, and custom team athletic wear.",
+    description: "Find NCC, Scouts, Guides and school cadet uniforms, badges, materials and custom sports team wear.",
     image: "/images/categories/uniforms.jpg",
     comingSoon: false
   },
@@ -43,7 +43,7 @@ export const categories = [
     id: "music",
     name: "Musical Instruments",
     slug: "musical-instruments",
-    description: "School band gear, marching drums, acoustic guitars, brass trumpets, electronic keyboards and rhythm percussion.",
+    description: "Browse school band instruments, marching drums, acoustic guitars, trumpets, keyboards and percussion instruments.",
     image: "/images/categories/musical.jpg",
     comingSoon: false
   }
