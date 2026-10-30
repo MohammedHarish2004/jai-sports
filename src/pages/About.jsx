@@ -2,348 +2,313 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import {
-  Trophy,
-  Target,
+  ArrowRight,
+  Award,
   Eye,
+  Heart,
+  Medal,
+  Music2,
   ShieldCheck,
   Sparkles,
-  Heart,
-  ArrowRight,
-  Flame,
-  CheckCircle2,
-  Calendar,
-  Medal,
-  Award,
+  Target,
+  Trophy,
 } from 'lucide-react';
-import SectionHeading from '../components/common/SectionHeading';
-import WhatsAppButton from '../components/common/WhatsAppButton';
 import { siteConfig } from '../config/siteConfig';
 import legacyImg from '../assets/51years.png';
 
-const coreValues = [
+const floors = [
   {
-    icon: ShieldCheck,
-    title: 'Authenticity & Durability',
-    description: 'We believe genuine sports gear builds genuine champions. Every product in our collection is vetted for build quality, bounce accuracy, and safety.',
+    name: 'Basement',
+    category: 'Fitness & Gym Equipment',
+    description: 'Supporting strength, fitness and healthier lifestyles.',
+    icon: Target,
   },
   {
+    name: 'Ground Floor',
+    category: 'Sports',
+    description: 'Sports products and equipment for players, schools and institutions.',
     icon: Trophy,
-    title: 'Honoring Achievement',
-    description: 'Every sports milestone deserves to be remembered. We create trophies and medals with precision engraving that winners treasure for decades.',
   },
   {
+    name: 'First Floor',
+    category: 'Toys',
+    description: 'Bringing happiness, creativity and fun to children.',
     icon: Sparkles,
-    title: 'Nurturing Young Talent',
-    description: 'Sports build resilience, discipline, and teamwork. Our kids line ensures youngsters start their athletic journey with safe, age-appropriate gear.',
   },
   {
-    icon: Heart,
-    title: 'Customer-First Guidance',
-    description: 'We offer personalized consultations for tournament coordinators, coaches, and parents looking for reliable advice within their budget.',
-  },
-];
-
-const pillars = [
-  {
-    title: 'Comprehensive Sports Equipment',
-    description: 'From football, cricket, basketball, and badminton to fitness and track essentials, we cater to athletes across every discipline.',
+    name: 'Second Floor',
+    category: 'Trophies',
+    description: 'Celebrating achievements, victories and unforgettable milestones.',
+    icon: Medal,
   },
   {
-    title: 'Championship Trophies & Awards',
-    description: 'Custom crystal trophies, heavy metallic cups, personalized medals, and commemorative wooden plaques customized for your event.',
-  },
-  {
-    title: 'Safe Gear for Young Champions',
-    description: 'Scaled-down, lightweight, durable athletic kits designed to make sports enjoyable and accessible for toddlers and junior players.',
-  },
-  {
-    title: 'Institutional & Team Supply',
-    description: 'Reliable bulk fulfillment, customized team uniforms, bibs, and maintenance accessories for academies and schools.',
-  },
-];
-
-const legacyMilestones = [
-  {
-    year: '1975',
-    title: 'The Foundation in Trichy',
-    description: 'Jai Sports opened its doors with a singular vision: providing authentic, durable sports equipment to young students and school athletes.',
-  },
-  {
-    year: '1992',
-    title: 'Nurturing Inter-School Champions',
-    description: 'Became the preferred sports partner for schools, colleges, and athletic meets across Tiruchirappalli and neighboring districts.',
-  },
-  {
-    year: '2010',
-    title: 'Awards & Trophy Craftsmanship',
-    description: 'Expanded state-of-the-art precision engraving, die-cast championship medals, and custom crystal trophies for state & district tournaments.',
-  },
-  {
-    year: `${new Date().getFullYear()}`,
-    title: '51 Years of Enduring Heritage',
-    description: 'A celebrated milestone of half a century inspiring student success. Then. Now. Always empowering the next generation of champions.',
+    name: 'Third Floor',
+    category: 'Musical Instruments',
+    description: 'Inspiring creativity and nurturing musical talent.',
+    icon: Music2,
   },
 ];
 
 export default function About() {
   useEffect(() => {
-    document.title = `51 Years Legacy (1975-2027) — ${siteConfig.brandName} | About Us`;
+    document.title = `About Us — ${siteConfig.brandName}`;
     window.scrollTo(0, 0);
   }, []);
 
   return (
-    <div className="bg-[#F5F6F8]">
-      {/* About Page Hero */}
-      <section className="bg-gradient-to-b from-[#101B4B] via-[#142159] to-[#101B4B] text-white py-16 sm:py-24 relative overflow-hidden">
+    <main className="bg-[#F5F6F8]">
+      <section className="relative overflow-hidden bg-gradient-to-br from-[#101B4B] via-[#142159] to-[#0A1132] py-16 text-white sm:py-24">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#F04423_1px,transparent_1px)] [background-size:24px_24px]" />
-        
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-12">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="order-2 lg:order-1 lg:col-span-7 space-y-5"
+              className="lg:col-span-7"
             >
-
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-outfit text-white leading-tight">
-                Inspiring Student Success.{' '}
-                <span className="text-[#F04423]">Then. Now. Always.</span>
-              </h1>
-
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-                Founded in <strong className="text-white">1975</strong>, <span className="text-white font-semibold">{siteConfig.brandName}</span> is proud to mark <strong className="text-[#F04423]">51 continuous years</strong> of equipping athletes, schools, colleges, and tournaments with tournament-grade sporting gear and championship trophies.
+              <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-[#FFA08A]">
+                JAI SPORTS · EST. 1975
               </p>
-
-              <div className="flex flex-wrap gap-4 pt-2">
-                <Link
-                  to="/products"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#F04423] hover:bg-[#D63617] text-white font-bold text-sm shadow-lg shadow-[#F04423]/25 transition-all"
-                >
-                  <span>Explore Product Catalog</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-
-                <WhatsAppButton
-                  variant="dark"
-                  size="md"
-                  className="rounded-xl border-white/20"
-                >
-                  Contact Our Team
-                </WhatsAppButton>
-              </div>
+              <h1 className="font-outfit text-4xl font-black leading-tight sm:text-5xl lg:text-6xl">
+                A Legacy of Passion.
+                <span className="block text-[#F04423]">A Tradition of Trust.</span>
+              </h1>
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                Every great journey begins with a passion. For JAI SPORTS, that
+                passion began with a deep love for sports during the school days
+                of our founder, N. John Sundar, M.Sc.
+              </p>
+              <p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300 sm:text-lg">
+                What started in 1975 as a humble 10 × 20 sq. ft. shop has grown
+                into a multi-floor destination spanning approximately 29 × 85 sq.
+                ft., built on dedication, quality and lasting customer
+                relationships.
+              </p>
             </motion.div>
-
-            {/* 51 Years Showcase Badge Card */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="order-1 lg:order-2 lg:col-span-5"
+              className="lg:col-span-5"
             >
-              <div className="">
-                <img
-                  src={legacyImg}
-                  alt="51 Years (1975-2027) Legacy - Inspiring Student Success"
-                  loading="lazy"
-                  decoding="async"
-                  className="w-80 sm:w-100 rounded-3xl h-auto mx-auto object-contain drop-shadow-md"
-                />
-              </div>
+              <img
+                src={legacyImg}
+                alt="51 Years of Jai Sports, 1975–2027"
+                decoding="async"
+                className="mx-auto w-full max-w-md rounded-3xl object-contain drop-shadow-xl"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Dedicated 51 Years Legacy Heritage Section */}
-      <section className="py-16 sm:py-20 bg-white border-b border-slate-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="51 YEARS HERITAGE (1975–2027)"
-            title="Half a Century of Inspiring Champions"
-            subtitle="From our beginnings in Tiruchirappalli to equipping hundreds of schools and state tournaments, our commitment to students has remained steadfast."
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
-            {legacyMilestones.map((milestone, idx) => (
-              <div
-                key={idx}
-                className="bg-[#F5F6F8] rounded-3xl p-6 border border-slate-200/80 hover:border-[#F04423]/40 transition-all hover:shadow-lg group flex flex-col justify-between"
-              >
-                <div>
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#101B4B] text-white text-xs font-black tracking-wider mb-4">
-                    <Calendar className="w-3.5 h-3.5 text-[#F04423]" />
-                    <span>{milestone.year}</span>
-                  </div>
-                  <h3 className="text-lg font-bold font-outfit text-[#101B4B] group-hover:text-[#F04423] transition-colors mb-2">
-                    {milestone.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
-                    {milestone.description}
-                  </p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-200 flex items-center gap-2 text-[11px] font-bold text-[#F04423]">
-                  <Medal className="w-3.5 h-3.5" />
-                  <span>Inspiring Student Success</span>
-                </div>
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-4"
+          >
+            <div className="relative mx-auto flex aspect-[4/5] max-w-sm flex-col items-center justify-center overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#101B4B] to-[#243582] p-8 text-center text-white shadow-xl">
+              <div className="absolute -right-12 -top-12 h-48 w-48 rounded-full border border-white/10" />
+              <div className="absolute -bottom-16 -left-12 h-56 w-56 rounded-full border border-white/10" />
+              <div className="relative flex h-36 w-36 items-center justify-center rounded-full border-4 border-[#F04423] bg-white/10 font-outfit text-4xl font-black tracking-wider text-white shadow-lg">
+                NJS
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Mission & Vision Section */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* Mission Card */}
-            <div className="bg-[#F5F6F8] rounded-3xl p-8 sm:p-10 border border-slate-200/80 relative overflow-hidden flex flex-col justify-between">
-              <div className="w-14 h-14 rounded-2xl bg-[#101B4B] text-[#F04423] flex items-center justify-center mb-6">
-                <Target className="w-7 h-7 text-[#F04423]" />
-              </div>
-
-              <div>
-                <span className="text-xs font-black uppercase tracking-wider text-[#F04423] block mb-1">
-                  OUR PURPOSE
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black font-outfit text-[#101B4B] mb-4">
-                  Our Mission
-                </h2>
-                <p className="text-sm sm:text-base text-[#555555] leading-relaxed">
-                  To supply durable, performance-driven sports equipment, authentic awards, and accessible athletic goods to sports lovers, schools, and tournament organizers—fostering sporting excellence and a lifelong love for fitness.
-                </p>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-slate-200/80 flex items-center gap-2 text-xs font-bold text-[#101B4B]">
-                <CheckCircle2 className="w-4 h-4 text-[#F04423]" />
-                <span>Dedicated to player growth at every stage</span>
+              <p className="relative mt-8 text-xs font-bold uppercase tracking-[0.22em] text-[#FFA08A]">
+                Founder · Since 1975
+              </p>
+              <h2 className="relative mt-2 font-outfit text-2xl font-black">
+                N. John Sundar
+              </h2>
+              <p className="relative mt-1 text-sm text-slate-300">M.Sc.</p>
+              <div className="relative mt-7 flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-semibold">
+                <Award className="h-4 w-4 text-[#F04423]" />
+                <span>A passion that became a legacy</span>
               </div>
             </div>
+          </motion.div>
 
-            {/* Vision Card */}
-            <div className="bg-[#101B4B] text-white rounded-3xl p-8 sm:p-10 border border-white/10 relative overflow-hidden flex flex-col justify-between">
-              <div className="w-14 h-14 rounded-2xl bg-white/10 text-[#FFA08A] flex items-center justify-center mb-6 border border-white/10">
-                <Eye className="w-7 h-7 text-[#F04423]" />
-              </div>
-
-              <div>
-                <span className="text-xs font-black uppercase tracking-wider text-[#FFA08A] block mb-1">
-                  THE FUTURE
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-black font-outfit text-white mb-4">
-                  Our Vision
-                </h2>
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  To become the region’s most trusted sports and trophy partner, renowned for unwavering product reliability, personalized customer advisory, and celebrating the triumphs of athletes from grassroots to the podium.
-                </p>
-              </div>
-
-              <div className="mt-8 pt-6 border-t border-white/10 flex items-center gap-2 text-xs font-bold text-slate-200">
-                <CheckCircle2 className="w-4 h-4 text-[#F04423]" />
-                <span>Every victory celebrated with honor</span>
-              </div>
+          <div className="lg:col-span-8">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#F04423]">
+              Our Founder
+            </p>
+            <h2 className="mt-3 font-outfit text-3xl font-black text-[#101B4B] sm:text-4xl">
+              One love for sports. A vision for generations.
+            </h2>
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-[#555555]">
+              <p>
+                JAI SPORTS began with the enthusiasm of our founder,
+                <strong className="text-[#101B4B]"> N. John Sundar, M.Sc.</strong>,
+                whose love for sports took root during his school days. In
+                1975, he turned that passion into a small 10 × 20 sq. ft. shop
+                with a simple purpose: to bring quality sports products within
+                reach of the community.
+              </p>
+              <p>
+                Through dedication, quality and the trust of generations of
+                customers, that humble beginning grew into the multi-floor
+                destination JAI SPORTS is today. The vision behind the shop
+                still guides us: bring people closer to sports, encourage
+                active lifestyles and make quality products accessible to
+                everyone.
+              </p>
+              <p>
+                More than five decades later, we continue to carry that
+                founding spirit forward—serving players, families, schools and
+                institutions across Tiruchirappalli.
+              </p>
+            </div>
+            <div className="mt-8 flex items-center gap-3 border-l-4 border-[#F04423] bg-[#FFF0ED] px-5 py-4 text-sm font-semibold leading-relaxed text-[#101B4B] sm:text-base">
+              <Heart className="h-5 w-5 shrink-0 text-[#F04423]" />
+              <span>Quality in every product. Trust in every relationship. Passion in everything we do.</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* What We Offer Section */}
-      <section className="py-16 sm:py-24 bg-[#F5F6F8]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="WHAT WE DO"
-            title="Our Product & Service Offerings"
-            subtitle="From individual athletes to large institutional tournaments, discover what sets our offerings apart."
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {pillars.map((pillar, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-3xl p-7 sm:p-8 border border-slate-200/80 shadow-sm hover:shadow-md transition-shadow"
-              >
-                <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-xl bg-[#FFF0ED] text-[#F04423] font-black text-sm flex items-center justify-center shrink-0">
-                    0{index + 1}
-                  </div>
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-bold font-outfit text-[#101B4B] mb-2">
-                      {pillar.title}
-                    </h3>
-                    <p className="text-sm text-[#555555] leading-relaxed">
-                      {pillar.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#F04423]">
+              Our Journey
+            </p>
+            <h2 className="mt-3 font-outfit text-3xl font-black text-[#101B4B] sm:text-4xl">
+              From a small beginning to a bigger vision
+            </h2>
+            <p className="mt-4 leading-relaxed text-[#555555]">
+              Our growth has never been just about expanding our store. It has
+              always been about expanding our vision. Today, JAI SPORTS brings
+              together multiple categories under one roof.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* Core Values Section */}
-      <section className="py-16 sm:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            badge="OUR GUIDING VALUES"
-            title="What Drives Jai Sports Every Day"
-            subtitle="Our standards are rooted in integrity, enthusiasm for sports, and genuine care for our community."
-            centered
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-            {coreValues.map((val, index) => {
-              const Icon = val.icon;
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {floors.map((floor, index) => {
+              const Icon = floor.icon;
               return (
-                <div
-                  key={index}
-                  className="bg-[#F5F6F8] rounded-3xl p-7 border border-slate-200/80 hover:border-slate-300 shadow-sm transition-all"
+                <motion.article
+                  key={floor.name}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: index * 0.05 }}
+                  className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="w-12 h-12 rounded-2xl bg-white text-[#F04423] flex items-center justify-center mb-5 shadow-sm">
-                    <Icon className="w-6 h-6 text-[#F04423]" />
+                  <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#F04423]">
+                    <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="text-lg font-bold font-outfit text-[#101B4B] mb-2">
-                    {val.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-[#555555] leading-relaxed">
-                    {val.description}
+                  <p className="mt-5 text-xs font-bold uppercase tracking-wider text-[#F04423]">
+                    {floor.name}
                   </p>
-                </div>
+                  <h3 className="mt-1 font-outfit text-xl font-bold text-[#101B4B]">
+                    {floor.category}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-[#555555]">
+                    {floor.description}
+                  </p>
+                </motion.article>
               );
             })}
           </div>
+          <p className="mt-8 text-center text-sm leading-relaxed text-[#555555]">
+            From a small beginning to a destination serving generations of
+            customers, every step reflects our commitment to continuous growth.
+          </p>
+        </div>
+      </section>
 
-          {/* Bottom Action CTA */}
-          <div className="mt-16 bg-gradient-to-r from-[#101B4B] to-[#18286E] text-white rounded-3xl p-8 sm:p-12 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-black font-outfit mb-2">
-                Ready to find the ideal sports gear?
-              </h3>
-              <p className="text-sm text-slate-300 max-w-xl">
-                Browse our product catalog or contact our shop team directly via WhatsApp for quick quotations.
+      <section className="bg-white py-16 sm:py-20">
+        <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
+          <div>
+            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFF0ED] text-[#F04423]">
+              <ShieldCheck className="h-6 w-6" />
+            </div>
+            <p className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-[#F04423]">
+              Built on Quality. Strengthened by Trust.
+            </p>
+            <h2 className="mt-3 font-outfit text-3xl font-black text-[#101B4B] sm:text-4xl">
+              Customers at the heart of everything we do.
+            </h2>
+            <div className="mt-5 space-y-4 leading-relaxed text-[#555555]">
+              <p>
+                For more than 50 years, our customers have been at the heart of
+                everything we do. Our long-standing relationships with
+                schools, colleges, sports institutions and individual
+                customers across Tiruchirappalli are among our proudest
+                achievements.
+              </p>
+              <p>
+                We believe that a product is more than just a purchase. It
+                represents a player’s ambition, a student’s achievement, a
+                team’s victory or a child’s happiness.
+              </p>
+              <p>
+                That is why we remain committed to providing quality products,
+                dependable service and a customer experience built on trust.
               </p>
             </div>
-
-            <div className="flex items-center gap-3 shrink-0">
-              <Link
-                to="/products"
-                className="px-6 py-3 rounded-xl bg-white text-[#101B4B] font-bold text-sm hover:bg-slate-100 transition-colors"
-              >
-                View Catalogue
-              </Link>
-              <Link
-                to="/contact"
-                className="px-6 py-3 rounded-xl bg-[#F04423] text-white font-bold text-sm hover:bg-[#D63617] transition-colors"
-              >
-                Contact Us
-              </Link>
+          </div>
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#101B4B] p-8 text-white sm:p-10">
+            <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-[#F04423]/10 blur-2xl" />
+            <div className="relative">
+              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-[#FFA08A]">
+                <Eye className="h-6 w-6" />
+              </div>
+              <p className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-[#FFA08A]">
+                Our Vision · A Healthier Trichy
+              </p>
+              <h2 className="mt-3 font-outfit text-3xl font-black sm:text-4xl">
+                A more active, healthier and sports-loving Tiruchirappalli.
+              </h2>
+              <p className="mt-5 leading-relaxed text-slate-300">
+                Our ambition is to inspire more children to play, encourage
+                young talents to pursue sports, support educational
+                institutions and help people embrace fitness as a way of life.
+              </p>
+              <p className="mt-4 leading-relaxed text-slate-300">
+                We aspire to be recognised as the No. 1 sports and lifestyle
+                destination in the district, not just through the products we
+                offer, but through the positive impact we create in our
+                community.
+              </p>
+              <div className="mt-8 flex items-center gap-2 border-t border-white/15 pt-5 text-sm font-semibold">
+                <Target className="h-5 w-5 text-[#F04423]" />
+                <span>Growing together with our community</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
-    </div>
+
+      <section className="bg-gradient-to-r from-[#101B4B] to-[#18286E] py-14 text-white sm:py-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-8 px-4 sm:px-6 md:flex-row md:items-center lg:px-8">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#FFA08A]">
+              More than a store
+            </p>
+            <h2 className="mt-3 font-outfit text-3xl font-black sm:text-4xl">
+              A legacy that keeps growing.
+            </h2>
+            <p className="mt-4 leading-relaxed text-slate-300">
+              From the first customer who trusted us in 1975 to every customer
+              who walks through our doors today, every relationship has helped
+              shape who we are. JAI SPORTS — Celebrating Passion. Inspiring
+              Generations.
+            </p>
+          </div>
+          <Link
+            to="/products"
+            className="inline-flex shrink-0 items-center gap-2 rounded-xl bg-[#F04423] px-6 py-3 font-bold text-white transition-colors hover:bg-[#D63617]"
+          >
+            Explore our products
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
